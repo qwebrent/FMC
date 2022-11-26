@@ -9,7 +9,7 @@
                         <p class="subtitle">Our only limit is your Imagination.</p>
                         <p class="subtitle">Reserve Now!</p>
                         <div class="hero-btns">
-                            <a href="/agreements" class="boxed-btn">More Info</a>
+                            <a href="/aboutus" class="boxed-btn">More Info</a>
                             <a href="/contactus" class="bordered-btn">Contact Us</a>
                         </div>
                     </div>
