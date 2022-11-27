@@ -12,9 +12,10 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function pending()
     {
-        //
+        $reservations = Reservation::where('isConfirmed', '=', 0)->get();
+        return view('backend.pending', compact('reservations'));
     }
 
     /**

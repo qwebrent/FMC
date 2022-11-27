@@ -35,6 +35,8 @@ Route::get('/services', function () {
     return view('frontend.services');
 });
 
+
+
 // Route::get('/prompt', function(){
 //      return view('frontend.prompt');
 //  });
@@ -67,3 +69,7 @@ Route::post('reservation/create', [App\Http\Controllers\ReservationController::c
 Route::get('menu', [App\Http\Controllers\MenuController::class, 'create'])->name('custom.reservation');
 Route::post('menu/create', [App\Http\Controllers\MenuController::class, 'store'])->name('custom.reservation.store');
 
+
+// Pending
+
+Route::get('pending', [App\Http\Controllers\ReservationController::class, 'pending'])->name('reservation.pending');
