@@ -13,7 +13,7 @@
                     class="btn btn-md btn-warning">Download <i class="fa fa-download"></i>
                 </a>
             </div>
-            <div class="row product-lists">
+            <div class="row">
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
@@ -36,7 +36,7 @@
                         <a href="{{ route('packageTwo') }}" class="cart-btn"><i class="fas fa-search"></i> More Details</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
                             <a href="{{ route('packageThree') }}"><img src="assets/img/package/package2.jpg"
@@ -70,7 +70,7 @@
                         <a href="{{ route('packageFive') }}" class="cart-btn"><i class="fas fa-search"></i> More Details</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
                             <a href="{{ route('packageSix') }}"><img src="assets/img/package/package2.jpg"
@@ -81,7 +81,7 @@
                         <a href="{{ route('packageSix') }}" class="cart-btn"><i class="fas fa-search"></i> More Details</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
                             <a href="{{ route('packageSeven') }}"><img src="assets/img/package/package2.jpg"
@@ -93,15 +93,15 @@
                             Details</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
-                            <a href="{{ route('packageEight') }}"><img src="assets/img/package/package2.jpg"
+                            <a href="{{ route('custom.reservation') }}"><img src="assets/img/package/package2.jpg"
                                     alt="" /></a>
                         </div>
                         <h3>Customize</h3>
                         <p class="product-price"><span>Package</span> Eight</p>
-                        <a href="{{ route('packageEight') }}" class="cart-btn"><i class="fas fa-search"></i> More
+                        <a href="{{ route('custom.reservation') }}" class="cart-btn"><i class="fas fa-search"></i> More
                             Details</a>
                     </div>
                 </div>

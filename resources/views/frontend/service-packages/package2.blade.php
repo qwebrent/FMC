@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="single-product-form">
-                        <a href="#" class="cart-btn"><i class="fas fa-calendar"></i> Reserve</a>
+                        <a href="{{ route('reservation') }}" class="cart-btn"><i class="fas fa-calendar"></i> Reserve</a>
                     </div>
                     <div class="single-product-content">
                         <h3>Buffet</h3>

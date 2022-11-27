@@ -19,7 +19,7 @@
     <div class="row justify-content-center"
         style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.959), rgba(119, 119, 119, 0.945)), url('assets/img/28.jpg'); background-repeat: no-repeat; background-size: cover;">
         <div class="col-md-8 ">
-            <form action="#" method="POST">
+            <form action="{{ route('custom.reservation.store') }}" method="POST">
                 @csrf
                 @method('POST')
                 <div class="card bg-danger mt-5 mb-5">
@@ -31,73 +31,83 @@
                             <div class="row">
                                 <!-- LEft side -->
                                 <div class="col-md-6">
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Full Name: *</label>
-                                        <input type="text" class="form-control" name="full_name" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="(First Name Middle Name Last Name)"
-                                            required>
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label for="lname" class="text-white">Last Name: *</label>
+                                            <input type="text" class="form-control" name="lname" id="lname"
+                                                placeholder="Last Name" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="fname" class="text-white">First Name: *</label>
+                                            <input type="text" class="form-control" name="fname" id="fname"
+                                                placeholder="First Name" required>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="mname" class="text-white">Middle Name:</label>
+                                            <input type="text" class="form-control" name="mname" id="mname"
+                                                placeholder="Middle Name" </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Contact Number: *</label>
-                                        <input type="text" class="form-control" name="contact" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="09XXXXXXXXX" required>
+                                    <div class="row">
+                                        <div class="form-group col-md-12">
+                                            <label for="phone" class="text-white">Contact Number: *</label>
+                                            <input type="text" class="form-control" name="phone" id="phone"
+                                                placeholder="09XXXXXXXXX" required>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="email" class="text-white">Email Address: *</label>
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="Email Here" required>
+                                            <small id="emailHelp" class="form-text text-white">We'll never share your email
+                                                with
+                                                anyone else.</small>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="event_type" class="text-white">Type of Event: *</label>
+                                            <input type="text" class="form-control" name="event_type"
+                                                value="Wedding/Debut" id="event_type" aria-describedby="emailHelp"
+                                                placeholder="Wedding" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="event_date" class="text-white">Event Date: *</label>
+                                            <input type="date" class="form-control" name="event_date" id="event_date"
+                                                placeholder="January 01, 2021" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="persons" class="text-white">Number of Persons: *</label>
+                                            <input type="number" class="form-control" name="persons" id="persons"
+                                                placeholder="50" required>
+                                            <small id="emailHelp" class="small" class="form-text text-muted">Minimun
+                                                of 50
+                                                persons. (50, 75, 100, 125, 150)</small>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="pacakge" class="text-white">Package you want to customize:</label>
+                                            <select class="form-control" id="package" name="package">
+                                                <option value="" disabled selected hidden class="text-muted">Select
+                                                    Item
+                                                </option>
+                                                <option value="package1">Package One</option>
+                                                <option value="package2">Package Two</option>
+                                                <option value="package3">Package Three</option>
+                                                <option value="package4">Package Four</option>
+                                                <option value="package5">Package Five</option>
+                                                <option value="package6">Package Six</option>
+                                                <option value="package7">Package Seven</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Email Address: *</label>
-                                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Email Here" required>
-                                        <small id="emailHelp" class="form-text text-white">We'll never share your email with
-                                            anyone else.</small>
-                                    </div>
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Type of Event: *</label>
-                                        <input type="text" class="form-control" name="event_type" value="Wedding/Debut"
-                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wedding"
-                                            required>
-                                    </div>
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Event Date: *</label>
-                                        <input type="date" class="form-control" name="event_date" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="January 01, 2021" required>
-                                    </div>
-                                    <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Number of Persons: *</label>
-                                        <input type="number" class="form-control" name="persons" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="50" required>
-                                        <small id="emailHelp" class="small" class="form-text text-muted">Minimun
-                                            of 50
-                                            persons. (50, 75, 100, 125, 150)</small>
-                                    </div>
-                                    {{-- <div class="form-group m-3">
-                                        <label for="exampleInputEmail1" class="text-white">Package you want to customize:
-                                            *</label>
-                                        <input type="text" class="form-control" name="message" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Package 1" required>
-                                        <small id="emailHelp" class="form-text">Pckage 1, Package 2, Package 3,
-                                            Package 4, Package 5, Package 6, Package 7 </small>
-                                    </div> --}}
-                                    <div class="form-group m-3">
-                                        <label for="beef" class="text-white">Package you want to customize:</label>
-                                        <select class="form-control" id="beef" name="beef">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
-                                            </option>
-                                            <option value="package1">Package One</option>
-                                            <option value="package2">Package Two</option>
-                                            <option value="package3">Package Three</option>
-                                            <option value="package4">Package Four</option>
-                                            <option value="package5">Package Five</option>
-                                            <option value="package6">Package Six</option>
-                                            <option value="package7">Package Seven</option>
-                                        </select>
-                                    </div>
+
                                 </div>
 
                                 <!-- Right side -->
+
                                 <div class="col-md-6">
-                                    <div class="form-group m-3">
+                                    <div class="form-group col-md-12">
                                         <label for="pork" class="text-white">Pork</label>
                                         <select class="form-control" id="pork" name="pork">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
                                             <option value="pastel">Pastel</option>
                                             <option value="stuffed pork roll">Stuffed Pork Roll</option>
@@ -105,10 +115,13 @@
                                             <option value="lomo with broccoli">Lomo with Broccoli</option>
                                             <option value="embotido">Embotido</option>
                                             <option value="sinantomas">Sinantomas</option>
-                                            <option value="stir fry spareribs with garlic">Stir Fry Spareribs with Garlic
+                                            <option value="stir fry spareribs with garlic">Stir Fry Spareribs with
+                                                Garlic
                                             </option>
-                                            <option value="spareribs with black beans">Spareribs with Black Beans</option>
-                                            <option value="lengua estofado with creamy mushroom sauce">Lengua Estofado with
+                                            <option value="spareribs with black beans">Spareribs with Black Beans
+                                            </option>
+                                            <option value="lengua estofado with creamy mushroom sauce">Lengua Estofado
+                                                with
                                                 Creamy Mushroom Sauce</option>
                                             <option value="rib eye steak">Rib Eye Steak</option>
                                             <option value="special pork sisig">Special Pork Sisig</option>
@@ -119,14 +132,16 @@
                                             <option value="patatim">Patatim</option>
                                             <option value="hamonado">Hamonado</option>
                                             <option value="pork grilled asado">Pork Grilled Asado</option>
-                                            <option value="special pineapple honey glazed hamon">Special Pineapple Honey
+                                            <option value="special pineapple honey glazed hamon">Special Pineapple
+                                                Honey
                                                 Glazed Hamon</option>
                                         </select>
                                     </div>
-                                    <div class="form-group m-3">
+                                    <div class="form-group col-md-12">
                                         <label for="chicken" class="text-white">Chicken</label>
-                                        <select class="form-control" id="chiken" name="chiken">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                        <select class="form-control" id="chicken" name="chicken">
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
                                             <option value="chicken gordon blue">Chicken Gordon Bleu</option>
                                             <option value="chicen fillet sweet and sour">Chicen Fillet (Sweet and Sour)
@@ -138,18 +153,21 @@
                                             <option value="chicken afritada">Chicken Afritada</option>
                                             <option value="buttered chicken with garlic">Buttered Chicken with Garlic
                                             </option>
-                                            <option value="chicken fille lemon sauce">Chicken Fille (Lemon Sauce)</option>
+                                            <option value="chicken fille lemon sauce">Chicken Fille (Lemon Sauce)
+                                            </option>
                                             <option value="chicken bourbon">Chicken Bourbon</option>
                                             <option value="creamy chicken with spinach">Creamy Chicken with Spinach
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="form-group m-3">
+                                    <div class="form-group col-md-12">
                                         <label for="vegetable" class="text-white">Vegetable</label>
-                                        <select class="form-control" id="vegitable" name="vegitable">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                        <select class="form-control" id="vegetable" name="vegetable">
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
-                                            <option value="carrots green peas singkamas with butter">Carrots, Green Peas,
+                                            <option value="carrots green peas singkamas with butter">Carrots, Green
+                                                Peas,
                                                 Singkamas with Butter</option>
                                             <option value="fresh lumpiang ubod">Fresh Lumpiang Ubod</option>
                                             <option value="assorted mixed vegetable in oyster sauce">Assorted Mixed
@@ -158,31 +176,38 @@
                                             <option value="buttered garlic mushroom">Buttered Garlic Mushroom</option>
                                         </select>
                                     </div>
-                                    <div class="form-group m-3">
+                                    <div class="form-group col-md-12">
                                         <label for="beef" class="text-white">Beef</label>
                                         <select class="form-control " id="beef" name="beef">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
                                             <option value="beef with broccoli">Beef with Broccoli</option>
                                             <option value="beef with young corn and mushroom">Beef with Young Corn and
                                                 Mushroom</option>
                                             <option value="beef with asparagus">Beef with Asparagus</option>
-                                            <option value="beef with mushroom in oyster sauce">Beef with Mushroom in Oyster
+                                            <option value="beef with mushroom in oyster sauce">Beef with Mushroom in
+                                                Oyster
                                                 Sauce</option>
                                             <option value="beef salpicao">Beef Salpicao</option>
                                         </select>
                                     </div>
-                                    <div class="form-group m-3">
+                                    <div class="form-group col-md-12">
                                         <label for="sea_food" class="text-white">Sea Foods</label>
                                         <select class="form-control" id="sea_food" name="sea_food">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
                                             <option value="rellenong pusit">Rellenong Pusit</option>
                                             <option value="rellenong bangus">Rellenong Bangus</option>
-                                            <option value="sweet and sour fish fillet">Sweet and Sour Fish Fillet</option>
-                                            <option value="fish fillet in white sauce">Fish Fillet in White Sauce</option>
-                                            <option value="fish fillet in lemon sauce">Fish Fillet in Lemon Sauce</option>
-                                            <option value="fish fillet in black beans">Fish Fillet in Black Beans</option>
+                                            <option value="sweet and sour fish fillet">Sweet and Sour Fish Fillet
+                                            </option>
+                                            <option value="fish fillet in white sauce">Fish Fillet in White Sauce
+                                            </option>
+                                            <option value="fish fillet in lemon sauce">Fish Fillet in Lemon Sauce
+                                            </option>
+                                            <option value="fish fillet in black beans">Fish Fillet in Black Beans
+                                            </option>
                                             <option value="assorted seafoods with vegetable">Assorted Seafoods with
                                                 Vegetable</option>
                                             <option value="fish fillet with tartar sauce">Fish Fillet with Tartar Sauce
@@ -192,10 +217,11 @@
                                             <option value="kare kare seafoods">Kar-Kare Seafoods</option>
                                         </select>
                                     </div>
-                                    <div class="form-group m-3">
-                                        <label for="deserts" class="text-white">Desserts</label>
-                                        <select class="form-control" id="deserts" name="diserts">
-                                            <option value="" disabled selected hidden class="text-muted">Select Item
+                                    <div class="form-group col-md-12">
+                                        <label for="desserts" class="text-white">Desserts</label>
+                                        <select class="form-control" id="desserts" name="desserts">
+                                            <option value="" disabled selected hidden class="text-muted">Select
+                                                Item
                                             </option>
                                             <option value="fruit salad">Fruit Salad</option>
                                             <option value="buko salad">Buko Salad</option>
@@ -217,6 +243,7 @@
                                             Terms and Conditions of FMC Catering and Services</label>
                                     </div>
                                 </div>
+
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -259,7 +286,7 @@
                             </div>
 
                             <div class="card-footer d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-md" id="submit">Submit</button>
                             </div>
 
 

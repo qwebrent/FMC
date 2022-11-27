@@ -1,3 +1,9 @@
+<div class="loader">
+    <div class="loader-inner">
+        <div class="circle"></div>
+    </div>
+</div>
+
 <div class="top-header-area" id="sticker">
     <div class="container">
         <div class="row">
@@ -5,7 +11,7 @@
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="/homepage">
+                        <a href="/">
                             <img src="assets/img/fmclogo.png" alt="">
                         </a>
                     </div>
@@ -14,7 +20,7 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="/homepage">Home</a>
+                            <li class="current-list-item"><a href="/">Home</a>
                             </li>
                             <li><a href="/aboutus">About</a></li>
                             {{-- <li><a href="#">Pages</a>
@@ -43,13 +49,12 @@
                             <li>
                                 <div class="header-icons">
                                     <a class="shopping-cart" href="/agreements"><i class="fas fa-book"></i></a>
-                                    {{-- <a class="mobile-hide search-bar-icon" href="#"><i
-                                            class="fas fa-search"></i></a> --}}
+                                    {{-- <a class="mobile-hide" href="#"></a> --}}
                                 </div>
                             </li>
                         </ul>
                     </nav>
-
+                    <div class="mobile-menu"></div>
                     <!-- menu end -->
                 </div>
             </div>
