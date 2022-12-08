@@ -26,10 +26,12 @@ class CreateReservationsTable extends Migration
             $table->string('package')->nullable();
             $table->integer('persons');
             $table->string('message')->nullable();
-            $table->boolean('isConfirmed')->default(0);
-            $table->boolean('isRefused')->default(0);
-            $table->boolean('isCustomized')->default(0);
-            $table->boolean('isFinished')->default(0);
+            $table->integer('isConfirmed')->default(0);
+            $table->integer('isRefused')->default(0);
+            $table->integer('isCustomized')->default(0);
+            $table->integer('isFinished')->default(0);
+            $table->integer('isOngoing')->default(0);
+            $table->integer('isPaymentPending')->default(0);
             $table->timestamps();
         });
     }

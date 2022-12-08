@@ -22,7 +22,7 @@
                             <th>Full Name</th>
                             <th>Contact Number</th>
                             <th>Email Address</th>
-                            <th>Customize</th>
+                            <th>Pending</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -33,17 +33,18 @@
                                 <td>{{ $reservation->phone }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>
-                                    @if ($reservation->isCustomize == 1)
-                                        <img src="assets/backend/img/tick-mark.png" height="25px" width="25px"
+                                    @if ($reservation->isPaymentPending == 1)
+
+                                            <img src="assets/backend/img/cancel.png" height="25px" width="25px"
                                             alt="">
                                     @else
-                                        <img src="assets/backend/img/cancel.png" height="25px" width="25px"
-                                            alt="">
+                                    <img src="assets/backend/img/tick-mark.png" height="32px" width="32px"
+                                    alt="">
                                     @endif
                                 </td>
-                                <td class="text-center"><a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $reservation->id }}">View Full Details</a>
-                                    {{-- @include('layout.reservation.modal') --}}
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-primary" id="btnsend"
+                                    href="/email/{{$reservation->id}}">Send Payment Form</a>
                                 </td>
                         @endforeach
 

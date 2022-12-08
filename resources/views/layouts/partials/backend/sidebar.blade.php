@@ -14,9 +14,15 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Messages</span></a>
             </li>
 
             <!-- Divider -->
@@ -31,18 +37,62 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-briefcase"></i>
                     <span>Reservations</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">STATUS:</h6>
                         <a class="collapse-item" href="{{ route('reservation.pending') }}">Pending</a>
-                        <a class="collapse-item" href="#">Confirmed</a>
-                        <a class="collapse-item" href="#">Ongoing</a>
-                        <a class="collapse-item" href="#">Finished</a>
+                        <a class="collapse-item" href="{{ route('reservation.confirmed') }}">Confirmed</a>
+                        <a class="collapse-item" href="{{ route('reservation.ongoing') }}">Ongoing</a>
+                        <a class="collapse-item" href="{{ route('reservation.finished') }}">Finished</a>
                     </div>
                 </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-credit-card"></i>
+                    <span>Payment</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">STATUS:</h6>
+                        <a class="collapse-item" href="{{ route('pendingPaymentTable') }}">Pending</a>
+                        <a class="collapse-item" href="{{ route('confirmedPaymentTable') }}">Confirmed</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('reservation.refused') }}">
+                    <i class="fas fa-fw fa-times"></i>
+                    <span>Refused Reservation</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                Manage Website
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-calendar"></i>
+                    <span>Calendar</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.gallery') }}">
+                    <i class="fas fa-fw fa-image"></i>
+                    <span>Gallery</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.contact') }}">
+                    <i class="fas fa-fw fa-phone"></i>
+                    <span>Contact Details</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->

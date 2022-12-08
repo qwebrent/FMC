@@ -15,8 +15,33 @@ class ReservationController extends Controller
     public function pending()
     {
         $reservations = Reservation::where('isConfirmed', '=', 0)->get();
-        return view('backend.pending', compact('reservations'));
+        return view('backend.reservations.pending', compact('reservations'));
     }
+
+    public function finished()
+    {
+        $reservations = Reservation::where('isFinished', '=', 1)->get();
+        return view('backend.reservations.finished', compact('reservations'));
+    }
+
+    public function confirmed()
+    {
+        $reservations = Reservation::where('isConfirmed', '=', 1)->get();
+        return view('backend.reservations.confirmed', compact('reservations'));
+    }
+
+    public function refused()
+    {
+        $reservations = Reservation::where('isRefused', '=', 1)->get();
+        return view('backend.reservations.refused', compact('reservations'));
+    }
+
+    public function ongoing()
+    {
+        $reservations = Reservation::where('isOngoing', '=', 1)->get();
+        return view('backend.reservations.ongoing', compact('reservations'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,11 +84,18 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show($id)
     {
-        //
+        $reservation = Reservation::where('id', $id)->firstOrFail();
+        return view('backend.modals.pendingModal', compact('$reservation'));
     }
 
+
+    public function showConfirmed($id)
+    {
+        $reservation = Reservation::where('id', $id)->firstOrFail();
+        return vuew('backend.modals.confirmedModal', compact('$reservation'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,10 +114,28 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function confirmReservation($id)
     {
-        //
+        $reservation = Reservation::where('id', '=', $id)->first()->update(['isConfirmed' => 1]);
+        return redirect()->route('reservation.confirmed');
     }
+
+    public function moveToPendingPayment($id)
+    {
+        $reservation = Reservation::where('id', '=', $id)->first()->update(['isConfirmed' => 2, 'isPaymentPending' => 1]);
+
+        return redirect()->route('pending.payment');
+    }
+
+    // public function refusedReservation($id)
+    // {
+    //     $reservation = Reservation::where('id', '=', $id)->first()->update([
+    //         'isConfirmed' => 0,
+    //         'isPaymentPending' => 0,
+    //         'isRefused' => 1,
+    //     ]);
+    // }
+
 
     /**
      * Remove the specified resource from storage.
@@ -93,8 +143,21 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy($id)
     {
-        //
+        $reservations = Reservation::findOrFail($id)->delete();
+        return redirect()->route('home');
+    }
+
+    public function restore($id)
+    {
+        $reservations = Reservation::onlyTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+
+    public function showRefused()
+    {
+        $refusedReservations = Reservation::onlyTrashed()->get();
+        return view('backend.reservations.refused', compact('refusedReservations'));
     }
 }

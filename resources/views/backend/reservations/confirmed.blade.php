@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Pending Reservations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Confirmed Reservations</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -33,17 +33,20 @@
                                 <td>{{ $reservation->phone }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>
-                                    @if ($reservation->isCustomize == 1)
-                                        <img src="assets/backend/img/tick-mark.png" height="25px" width="25px"
+                                    @if ($reservation->isCustomized == 1)
+                                        <img src="assets/backend/img/tick-mark.png" height="32px" width="32px"
                                             alt="">
                                     @else
                                         <img src="assets/backend/img/cancel.png" height="25px" width="25px"
                                             alt="">
                                     @endif
                                 </td>
-                                <td class="text-center"><a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $reservation->id }}">View Full Details</a>
-                                    {{-- @include('layout.reservation.modal') --}}
+                                <td class="text-center">
+                                    {{-- <a class="btn btn-sm btn-primary" id="btnsend"
+                                    href="/email/{{$reservation->id}}">Send Payment Form</a> --}}
+                                    <a class="btn btn-outline-info btn-sm" data-toggle="modal"
+                                        data-target="#view{{ $reservation->id }}">View Full Details</a>
+                                    @include('backend.modals.confirmedModal')
                                 </td>
                         @endforeach
 

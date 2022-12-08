@@ -47,6 +47,7 @@ class MenuController extends Controller
             'event_date'=>$request->event_date,
             'package'=>$request->package,
             'persons'=>$request->persons,
+            'isCustomized'=>1,
         ]) -> id;
 
         $menu = Menu::create([

@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="form-title">
-                        <h2>Have you any question?</h2>
+                        <h2>Any question or feedback?</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo
@@ -41,23 +41,20 @@
                         <div class="contact-form-box">
                             <h4><i class="fas fa-map"></i> Shop Address</h4>
                             <p>
-                                34/8, East Hukupara <br />
-                                Gifirtok, Sadan. <br />
-                                Country Name
+                                {{ $contactus->address }}
                             </p>
                         </div>
                         <div class="contact-form-box">
                             <h4><i class="far fa-clock"></i> Shop Hours</h4>
                             <p>
-                                MON - FRIDAY: 8 to 9 PM <br />
-                                SAT - SUN: 10 to 8 PM
+                                {{ $contactus->shopHours }}
                             </p>
                         </div>
                         <div class="contact-form-box">
                             <h4><i class="fas fa-address-book"></i> Contact</h4>
                             <p>
-                                Phone: +00 111 222 3333 <br />
-                                Email: support@fruitkha.com
+                                Phone: {{ $contactus->phone }} <br />
+                                Email: {{ $contactus->email }}
                             </p>
                         </div>
                     </div>

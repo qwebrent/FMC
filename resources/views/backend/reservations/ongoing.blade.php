@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Pending Reservations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Ongoing Reservations</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -33,7 +33,7 @@
                                 <td>{{ $reservation->phone }}</td>
                                 <td>{{ $reservation->email }}</td>
                                 <td>
-                                    @if ($reservation->isCustomize == 1)
+                                    @if ($reservation->isOngoing == 1)
                                         <img src="assets/backend/img/tick-mark.png" height="25px" width="25px"
                                             alt="">
                                     @else
@@ -41,9 +41,11 @@
                                             alt="">
                                     @endif
                                 </td>
-                                <td class="text-center"><a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $reservation->id }}">View Full Details</a>
+                                <td class="text-center">
+                                    {{-- <a class="btn btn-outline-info btn-sm" data-toggle="modal"
+                                        data-target="#accept{{ $reservation->id }}">View Full Details</a> --}}
                                     {{-- @include('layout.reservation.modal') --}}
+                                    *Button for Finished Reservation*
                                 </td>
                         @endforeach
 

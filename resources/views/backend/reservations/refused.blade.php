@@ -12,7 +12,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Pending Reservations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Refused Reservations</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -27,13 +27,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($reservations as $reservation)
+                        @foreach ($refusedReservations as $refused)
                             <tr>
-                                <td>{{ $reservation->fullname }}</td>
-                                <td>{{ $reservation->phone }}</td>
-                                <td>{{ $reservation->email }}</td>
+                                <td>{{ $refused->fullname }}</td>
+                                <td>{{ $refused->phone }}</td>
+                                <td>{{ $refused->email }}</td>
                                 <td>
-                                    @if ($reservation->isCustomize == 1)
+                                    @if ($refused->isRefused == 1)
                                         <img src="assets/backend/img/tick-mark.png" height="25px" width="25px"
                                             alt="">
                                     @else
@@ -41,8 +41,8 @@
                                             alt="">
                                     @endif
                                 </td>
-                                <td class="text-center"><a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $reservation->id }}">View Full Details</a>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-primary" onclick="return confirm('Are you sure you want to restore this reservation)" href="{{ route('restore.reservation', $refused->id) }}">Restore</a>
                                     {{-- @include('layout.reservation.modal') --}}
                                 </td>
                         @endforeach

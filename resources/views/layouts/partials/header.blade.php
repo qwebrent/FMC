@@ -40,7 +40,7 @@
                                     <li><a href="single-news.html">Single News</a></li>
                                 </ul> --}}
                             </li>
-                            <li><a href="/contactus">Contact</a></li>
+                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                             <li><a href="#">Services</a>
                                 <ul class="sub-menu">
                                     <li><a href="/services">Wedding and Debut</a></li>
