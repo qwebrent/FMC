@@ -7,12 +7,12 @@
 
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Reservations</h1>
+    <h1 class="h3 mb-2 text-gray-800">Payments</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Pending Reservations</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Pending Paymentss</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -34,17 +34,16 @@
                                 <td>{{ $reservation->email }}</td>
                                 <td>
                                     @if ($reservation->isPaymentPending == 1)
-
-                                            <img src="assets/backend/img/cancel.png" height="25px" width="25px"
+                                        <img src="assets/backend/img/cancel.png" height="25px" width="25px"
                                             alt="">
                                     @else
-                                    <img src="assets/backend/img/tick-mark.png" height="32px" width="32px"
-                                    alt="">
+                                        <img src="assets/backend/img/tick-mark.png" height="32px" width="32px"
+                                            alt="">
                                     @endif
                                 </td>
                                 <td class="text-center">
                                     <a class="btn btn-sm btn-primary" id="btnsend"
-                                    href="/email/{{$reservation->id}}">Send Payment Form</a>
+                                        href="/email/{{ $reservation->id }}">Send Payment Form</a>
                                 </td>
                         @endforeach
 

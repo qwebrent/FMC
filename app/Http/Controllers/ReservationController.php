@@ -124,7 +124,7 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::where('id', '=', $id)->first()->update(['isConfirmed' => 2, 'isPaymentPending' => 1]);
 
-        return redirect()->route('pending.payment');
+        return redirect()->route('home');
     }
 
     // public function refusedReservation($id)
