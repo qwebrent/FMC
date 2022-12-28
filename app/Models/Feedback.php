@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Feedback extends Model
 {
     use HasFactory;
 
-    protected $table = 'galleries';
-    public $guarded = [];
+    protected $table = 'feedback';
+    protected $fillable = [
+        'name',
+        'message',
+    ];
 }

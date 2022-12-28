@@ -32,4 +32,9 @@ class HomeController extends Controller
         $contactus = Contact::first();
         return view('frontend.contact', compact('contactus'));
     }
+
+    public function carousel()
+    {
+
+    }
 }

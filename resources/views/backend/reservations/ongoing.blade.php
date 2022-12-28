@@ -22,7 +22,7 @@
                             <th>Full Name</th>
                             <th>Contact Number</th>
                             <th>Email Address</th>
-                            <th>Customize</th>
+                            <th>Ongoing</th>
                             <th>Action</th>
                         </tr>
                     </thead>

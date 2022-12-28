@@ -29,7 +29,13 @@ class PaymentController extends Controller
     {
         $reservation = Reservation::where('id', $id)->firstOrFail();
         return view('frontend.paymentConfirmation', compact('reservation'));
+    }
 
+
+    public function paymentDetails()
+    {
+        $payments = Payment::get();
+        return view('backend.payment.confirmed', compact('payments'));
     }
 
     /**
@@ -67,7 +73,7 @@ class PaymentController extends Controller
         ]);
 
 
-        return redirect()->route('confirmedPaymentTable');
+        return view('frontend.home');
     }
 
     /**

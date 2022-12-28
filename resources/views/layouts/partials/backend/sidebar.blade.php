@@ -24,6 +24,11 @@
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Messages</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('backend.pricePackage') }}">
+                    <i class="fas fa-fw fa-money-bill"></i>
+                    <span>Package Prices</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -93,6 +98,11 @@
                 <a class="nav-link" href="{{ route('backend.contact') }}">
                     <i class="fas fa-fw fa-phone"></i>
                     <span>Contact Details</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-people-carry"></i>
+                    <span>Featured Client</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->

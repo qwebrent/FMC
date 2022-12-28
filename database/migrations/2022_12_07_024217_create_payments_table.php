@@ -21,7 +21,7 @@ class CreatePaymentsTable extends Migration
             $table->string('event_type');
             $table->string('event_date');
             $table->string('modeOfPayment')->nullable();
-            $table->string('referenceNum')->nullable();
+            $table->string('referenceNum')->unique()->nullable();
             $table->timestamps();
         });
     }

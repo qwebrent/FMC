@@ -7,41 +7,32 @@
 
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Payments</h1>
+    <h1 class="h3 mb-2 text-gray-800">Edit</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Confirmed Payments</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Package Prices</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Full Name</th>
-                            <th>Contact Number</th>
-                            <th>Email Address</th>
-                            <th>Reference No.</th>
+                            <th>Package Name</th>
+                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($payments as $payment)
+                        @foreach ($prices as $price)
                             <tr>
-                                <td>{{ $payment->fullname }}</td>
-                                <td>{{ $payment->phone }}</td>
-                                <td>{{ $payment->email }}</td>
-                                <td>
-                                    {{ $payment->referenceNum }}
-                                </td>
+                                <td>{{ $price->package_name }}</td>
+                                <td>{{ $price->package_price }}</td>
                                 <td class="text-center">
-                                    {{-- <a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#view{{ $reservation->id }}">View Full Details</a>
-                                    @include('backend.modals.confirmedModal') --}}
-                                    <a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $payment->id }}">View Payment Details</a>
-                                    @include('backend.modals.paymentDetails')
+                                    <a href="{{ route('backend.edit.price', $price->id) }}"
+                                        class="btn btn-primary mr-5">Edit</a>
+                                    {{-- @include('layout.reservation.modal') --}}
                                 </td>
                         @endforeach
 

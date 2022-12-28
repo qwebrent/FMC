@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PriceController;
 use App\Mail\PaymentMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -89,10 +90,9 @@ Route::get('ongoing-reservation', [App\Http\Controllers\ReservationController::c
 
 // Payment Status
 Route::get('pending-payment', [App\Http\Controllers\PaymentController::class, 'pending'])->name('pendingPaymentTable');
-Route::get('confirmed-payment', [App\Http\Controllers\PaymentController::class, 'confirmed'])->name('confirmedPaymentTable');
+Route::get('confirmed-payment', [App\Http\Controllers\PaymentController::class, 'paymentDetails'])->name('confirmedPaymentTable');
 
 // Payment Confirmation Page
-
 Route::get('pending-payment{id}', [App\Http\Controllers\PaymentController::class, 'pendingPayment'])->name('payment.confirmation')->middleware('signed');
 Route::get('confirm-payment{id}', [App\Http\Controllers\PaymentController::class, 'paymentForm'])->name('actual.payment');
 Route::post('payment-create', [App\Http\Controllers\PaymentController::class, 'store'])->name('payment.store');
@@ -103,12 +103,16 @@ Route::post('payment-create', [App\Http\Controllers\PaymentController::class, 's
 Route::PUT('/pending/{id}', [App\Http\Controllers\ReservationController::class, 'confirmReservation'])->name('confirm.reservation');
 Route::PUT('/confirmed/{id}', [App\Http\Controllers\ReservationController::class, 'moveToPendingPayment'])->name('pending.payment');
 
-
 // Manage Website
+Route::get('fmc-gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('backend.gallery');
+Route::get('fmc-package-price', [App\Http\Controllers\PriceController::class, 'index'])->name('backend.pricePackage');
+Route::get('edit-price{id}', [App\Http\Controllers\PriceController::class, 'edit'])->name('backend.edit.price');
 Route::get('fmc-contact', [App\Http\Controllers\ContactController::class, 'index'])->name('backend.contact');
 Route::get('edit-contact{id}', [App\Http\Controllers\ContactController::class, 'edit'])->name('backend.edit.contact');
 Route::patch('update-contact/{id}', [App\Http\Controllers\ContactController::class, 'update'])->name('backend.update.contact');
-Route::get('fmc-gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('backend.gallery');
+Route::patch('update-price/{id}', [App\Http\Controllers\PriceController::class, 'update'])->name('backend.update.price');
+
+
 
 
 
