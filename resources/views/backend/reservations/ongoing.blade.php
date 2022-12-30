@@ -42,10 +42,10 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    {{-- <a class="btn btn-outline-info btn-sm" data-toggle="modal"
-                                        data-target="#accept{{ $reservation->id }}">View Full Details</a> --}}
-                                    {{-- @include('layout.reservation.modal') --}}
-                                    *Button for Finished Reservation*
+                                    <a class="btn btn-outline-info btn-sm" data-toggle="modal"
+                                        data-target="#accept{{ $reservation->id }}">Mark as Finished</a>
+                                    @include('backend.modals.finishModal')
+                                    {{-- *Button for Finished Reservation* --}}
                                 </td>
                         @endforeach
 

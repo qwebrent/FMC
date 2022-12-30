@@ -2,7 +2,7 @@
   <div class="footer-area">
       <div class="container">
           <div class="row">
-              <div class="col-lg-3 col-md-6">
+              {{-- <div class="col-lg-3 col-md-6">
                   <div class="footer-box about-widget">
                       <h2 class="widget-title">About us</h2>
                       <p>
@@ -26,11 +26,11 @@
                   <div class="footer-box pages">
                       <h2 class="widget-title">Pages</h2>
                       <ul>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="about.html">About</a></li>
-                          <li><a href="services.html">Shop</a></li>
-                          <li><a href="news.html">News</a></li>
-                          <li><a href="contact.html">Contact</a></li>
+                          <li><a href="{{ url('/') }}">Home</a></li>
+                          <li><a href="{{ url('/aboutus') }}">About</a></li>
+                          <li><a href="#">Gallery</a></li>
+                          <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
+                          <li><a href="{{ url('/services') }}">Services</a></li>
                       </ul>
                   </div>
               </div>
@@ -45,7 +45,7 @@
                           </button>
                       </form>
                   </div>
-              </div>
+              </div> --}}
           </div>
       </div>
   </div>

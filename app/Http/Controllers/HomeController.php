@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Reservation;
 
 class HomeController extends Controller
 {
@@ -24,14 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ongoing = Reservation::where('isOngoing', '=', 1)->count();
+        $finished = Reservation::where('isFinished', '=', 1)->count();
+        return view('home', compact('ongoing', 'finished'));
     }
 
-    public function contactUs()
-    {
-        $contactus = Contact::first();
-        return view('frontend.contact', compact('contactus'));
-    }
 
     public function carousel()
     {

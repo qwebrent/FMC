@@ -10,8 +10,9 @@
                     <div class="section-title">
                         <h3><span class="orange-text">Our</span> Services</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Aliquid, fuga quas itaque eveniet beatae optio.
+                            We offer customizable catering services for all types of events. From intimate gatherings to
+                            large corporate events, our team is dedicated to providing top-notch service and delicious food.
+                            Contact us today to start planning your event.
                         </p>
                     </div>
                 </div>
@@ -69,24 +70,24 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1 text-center">
                     <div class="testimonial-sliders">
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.png" alt="" />
-                            </div>
-                            <div class="client-meta">
-                                <h3>Saira Hakim <span>Local shop owner</span></h3>
-                                <p class="testimonial-body">
-                                    " Sed ut perspiciatis unde omnis iste natus error veritatis
-                                    et quasi architecto beatae vitae dict eaque ipsa quae ab
-                                    illo inventore Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium "
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
+                        @foreach ($clients as $client)
+                            <div class="single-testimonial-slider">
+                                <div class="client-avater">
+                                    <img src="/images/{{ $client->image }}" alt="" />
+                                </div>
+                                <div class="client-meta">
+                                    <h3>{{ $client->client }}</h3>
+                                    <p class="testimonial-body">
+                                        " {{ $client->message }} "
+                                    </p>
+                                    <div class="last-icon">
+                                        <i class="fas fa-quote-right"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single-testimonial-slider">
+                        @endforeach
+
+                        {{-- <div class="single-testimonial-slider">
                             <div class="client-avater">
                                 <img src="assets/img/avaters/avatar2.png" alt="" />
                             </div>
@@ -119,7 +120,7 @@
                                     <i class="fas fa-quote-right"></i>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -151,6 +152,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- end advertisement section -->
 
     <!-- shop banner -->

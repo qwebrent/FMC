@@ -31,7 +31,7 @@
                     </div>
                     <div class="single-product-content">
                         <h3>Service A</h3>
-                        <p class="single-product-pricing">50 Person - Php 15,000</p>
+                        <p class="single-product-pricing">50 Person - Php {{ $price6->package_price }}</p>
                         <div class="row">
                             <ul>
                                 <li>100 set of utensils</li>

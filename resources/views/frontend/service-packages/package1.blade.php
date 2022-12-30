@@ -32,7 +32,7 @@
                     </div>
                     <div class="single-product-content">
                         <h3>Buffet</h3>
-                        <p class="single-product-pricing">100 Person at Php 44,999.00</p>
+                        <p class="single-product-pricing">100 Person at Php {{ $price1->package_price }}</p>
                         <div class="row">
                             <ul>
                                 <li>Steam Rice</li>

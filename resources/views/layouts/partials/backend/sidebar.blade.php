@@ -20,7 +20,7 @@
             </li>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('backend.message') }}">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Messages</span></a>
             </li>
@@ -84,11 +84,11 @@
                 Manage Website
             </div>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-calendar"></i>
                     <span>Calendar</span></a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.gallery') }}">
                     <i class="fas fa-fw fa-image"></i>
@@ -100,7 +100,7 @@
                     <span>Contact Details</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('backend.featured') }}">
                     <i class="fas fa-fw fa-people-carry"></i>
                     <span>Featured Client</span></a>
             </li>

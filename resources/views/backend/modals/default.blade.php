@@ -10,8 +10,7 @@
             </div>
 
             <div class="modal-body">
-                <h4 class="modal-title text-dark font-weight-bold"">ARE YOU SURE YOU WANT TO APPROVE
-                    THIS REQUEST?</h4>
+                <h4 class="modal-title text-dark font-weight-bold"">Finished Reservation Details</h4>
                 <form action="{{ route('confirm.reservation', $reservation->id) }}" method="post">
                     @csrf
                     @method('put')
@@ -84,15 +83,9 @@
                     </table>
 
                     <div class="modal-footer">
-                        <button class="btn btn-success" type="submit">Approve</button>
+
                 </form>
-                <form method="POST" action="{{ route('refuse.reservation', $reservations->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <input name="_method" type="hidden" value="DELETE">
-                    <button type="submit" class="btn btn-warning delete" title='Delete'>Cancel
-                        Reservation</button>
-                </form>
+
             </div>
 
 

@@ -16,6 +16,7 @@ class Payment extends Model
         'email',
         'event_type',
         'event_date',
+        'package_num',
         'modeOfPayment',
         'referenceNum',
     ];

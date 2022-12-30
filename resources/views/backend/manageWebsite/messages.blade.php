@@ -7,40 +7,48 @@
 
 @section('content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Edit</h1>
+    <h1 class="h3 mb-2 text-gray-800">Messages</h1>
+
     @if (Session::has('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success mt-2">
             {{ Session::get('success') }}
         </div>
     @endif
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4 mt-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Package Prices</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Contact Us Messages</h6>
         </div>
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Package Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($prices as $price)
+                        @foreach ($messages as $message)
                             <tr>
-                                <td>{{ $price->id }}</td>
-                                <td>{{ $price->package_name }}</td>
-                                <td>{{ $price->package_price }}</td>
-                                <td class="text-center">
-                                    <a href="{{ route('backend.edit.price', $price->id) }}"
-                                        class="btn btn-primary mr-5">Edit</a>
-                                    {{-- @include('layout.reservation.modal') --}}
+                                <td>{{ $message->name }}</td>
+                                <td>{{ $message->email }}</td>
+                                <td>{{ $message->phone }}</td>
+                                <td>{{ $message->subject }}</td>
+                                <td>{{ $message->message }}</td>
+                                <td>
+                                    <form action="{{ route('backend.delete.message', $message->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
+                            </tr>
                         @endforeach
 
                     </tbody>

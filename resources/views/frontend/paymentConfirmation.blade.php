@@ -93,6 +93,11 @@
                                             value="{{ $reservation->event_date }}"></TD>
                                 </TR>
                                 <TR>
+                                    <TD class="text-white">Package Number: </TD>
+                                    <TD><INPUT TYPE="TEXT" NAME="package_num" SIZE="25"
+                                            value="{{ Str::title($reservation->package) }}"></TD>
+                                </TR>
+                                <TR>
                                     <TD class="text-white">Mode of Payment: </TD>
                                     <TD><INPUT TYPE="TEXT" NAME="modeOfPayment" SIZE="25"
                                             value="{{ $reservation->modeOfPayment }}"></TD>

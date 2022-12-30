@@ -19,6 +19,7 @@ class PriceController extends Controller
         return view('backend.manageWebsite.packagePrice', compact('prices'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -75,7 +76,7 @@ class PriceController extends Controller
         $prices = Price::where('id', $id)->update($request->except([
             '_token', '_method'
         ]));
-        return redirect()->back();
+        return redirect()->route('backend.pricePackage')->with('success', 'Package Price is updated');
     }
 
     /**

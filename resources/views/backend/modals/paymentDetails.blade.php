@@ -10,11 +10,10 @@
             </div>
 
             <div class="modal-body">
-                <h4 class="modal-title text-dark font-weight-bold"">ARE YOU SURE YOU WANT TO APPROVE
-                    THIS REQUEST?</h4>
-                <form action="{{ route('confirm.reservation', $payment->id) }}" method="post">
-                    @csrf
-                    @method('put')
+                <h4 class="modal-title text-dark font-weight-bold"">{{ $payment->fullname }} -
+                    {{ $payment->event_type }}</h4>
+                <form>
+
                     <br>
                     <br>
                     <table align="center" class="table table-striped">
@@ -43,6 +42,10 @@
                             <td>{{ $payment->event_date }}</td>
                         </tr>
                         <tr>
+                            <th>PACKAGE</th>
+                            <td>{{ Str::Title($payment->package_num) }}</td>
+                        </tr>
+                        <tr>
                             <th>MODE OF PAYMENT</th>
                             <td>{{ Str::Title($payment->modeOfPayment) }}</td>
                         </tr>
@@ -54,7 +57,10 @@
                     </table>
 
                     <div class="modal-footer">
-                        {{-- <button class="btn btn-success" type="submit">Approve</button> --}}
+                        {{-- <button class="btn btn-success" type="submit">Send Receipt</button> --}}
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-success">Compose
+                            Email</a>
                 </form>
                 {{-- <form action="#" method="post">
                     @csrf

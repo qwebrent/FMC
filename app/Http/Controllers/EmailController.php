@@ -30,7 +30,7 @@ class EmailController extends Controller
 
         Mail::to($customer->email)->send(new PaymentMail($data));
 
-        Return redirect()->route('home');
+        Return redirect()->route('home')->with('success', 'Email is successfully sent to the customer');
     }
 
 

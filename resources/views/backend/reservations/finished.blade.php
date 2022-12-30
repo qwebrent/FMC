@@ -22,7 +22,7 @@
                             <th>Full Name</th>
                             <th>Contact Number</th>
                             <th>Email Address</th>
-                            <th>Customize</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -43,7 +43,7 @@
                                 </td>
                                 <td class="text-center"><a class="btn btn-outline-info btn-sm" data-toggle="modal"
                                         data-target="#accept{{ $reservation->id }}">View Full Details</a>
-                                    {{-- @include('layout.reservation.modal') --}}
+                                    @include('backend.modals.default')
                                 </td>
                         @endforeach
 

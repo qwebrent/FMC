@@ -34,7 +34,7 @@
                                     <li><a href="shop.html">Shop</a></li>
                                 </ul>
                             </li> --}}
-                            <li><a href="#">Gallery</a>
+                            <li><a href="{{ route('frontend.gallery') }}">Gallery</a>
                                 {{-- <ul class="sub-menu">
                                     <li><a href="news.html">News</a></li>
                                     <li><a href="single-news.html">Single News</a></li>

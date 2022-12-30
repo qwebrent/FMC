@@ -18,6 +18,11 @@ class ContactController extends Controller
         return view('backend.manageWebsite.contact', compact('contacts'));
     }
 
+    public function contactUs()
+    {
+        $contactus = Contact::first();
+        return view('frontend.contact', compact('contactus'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -75,7 +80,7 @@ class ContactController extends Controller
         $contacts = Contact::where('id', $id)->update($request->except([
             '_token', '_method'
         ]));
-        return redirect()->back();
+        return redirect()->route('backend.contact')->with('success', 'Contact details updated');
     }
 
     /**

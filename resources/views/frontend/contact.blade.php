@@ -11,15 +11,16 @@
                     <div class="form-title">
                         <h2>Any question or feedback?</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo
-                            alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore,
-                            esse natus!
+                            We value your input and want to hear from you! If you have any questions about our staff or
+                            service, or if you have any feedback on your experience with us, please don't hesitate to let us
+                            know. Your comments and suggestions help us improve and better serve our customers. Thank you
+                            for taking the time to reach out to us.
                         </p>
                     </div>
                     <div id="form_status"></div>
                     <div class="contact-form">
-                        <form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+                        <form action="{{ route('backend.message.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <p>
                                 <input type="text" placeholder="Name" name="name" id="name" />
                                 <input type="email" placeholder="Email" name="email" id="email" />
@@ -31,7 +32,7 @@
                             <p>
                                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                             </p>
-                            <input type="hidden" name="token" value="FsWga4&@f6aw" />
+                            {{-- <input type="hidden" name="token" value="FsWga4&@f6aw" /> --}}
                             <p><input type="submit" value="Submit" /></p>
                         </form>
                     </div>

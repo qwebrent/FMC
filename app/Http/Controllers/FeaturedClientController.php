@@ -14,7 +14,8 @@ class FeaturedClientController extends Controller
      */
     public function index()
     {
-        //
+        $featuredClients = FeaturedClient::get();
+        return view('backend.manageWebsite.featured', compact('featuredClients'));
     }
 
     /**
@@ -24,7 +25,7 @@ class FeaturedClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.manageWebsite.addFeatured');
     }
 
     /**
@@ -35,7 +36,23 @@ class FeaturedClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'client' => 'required',
+            'message' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('images'), $imageName);
+
+        $featuredclient = new FeaturedClient([
+            'client' => $request->get('client'),
+            'message' => $request->get('message'),
+            'image' => $imageName
+        ]);
+
+        $featuredclient->save();
+        return redirect()->route('backend.featured')->with('success', 'Featured Client saved!');
     }
 
     /**
@@ -55,9 +72,10 @@ class FeaturedClientController extends Controller
      * @param  \App\Models\FeaturedClient  $featuredClient
      * @return \Illuminate\Http\Response
      */
-    public function edit(FeaturedClient $featuredClient)
+    public function edit($id)
     {
-        //
+        $featuredClient = FeaturedClient::find($id);
+        return view('backend.manageWebsite.editFeatured', compact('featuredClient'));
     }
 
     /**
@@ -67,9 +85,26 @@ class FeaturedClientController extends Controller
      * @param  \App\Models\FeaturedClient  $featuredClient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FeaturedClient $featuredClient)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'client' => 'required',
+            'message' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $featuredClient = FeaturedClient::find($id);
+        $featuredClient->client = $request->get('client');
+        $featuredClient->message = $request->get('message');
+        if ($request->hasFile('image')) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $featuredClient->image = $imageName;
+        }
+
+        // dd($featuredClient);
+        $featuredClient->save();
+        return redirect()->route('backend.featured')->with('success', 'Featured Client updated!');
     }
 
     /**

@@ -31,7 +31,7 @@
                     </div>
                     <div class="single-product-content">
                         <h3>Menu C</h3>
-                        <p class="single-product-pricing">Php 560 per plate</p>
+                        <p class="single-product-pricing">Php {{ $price5->package_price }} per plate</p>
                         <div class="row">
                             <ul>
                                 <li>Steam Rice</li>

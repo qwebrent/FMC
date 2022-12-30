@@ -32,10 +32,17 @@ class PaymentController extends Controller
     }
 
 
+
     public function paymentDetails()
     {
         $payments = Payment::get();
         return view('backend.payment.confirmed', compact('payments'));
+    }
+
+    public function paymentReceipt($id)
+    {
+        $details = Payment::where('id', $id)->firstOrFail();
+        return view('frontend.payment-receipt', compact('details'));
     }
 
     /**
@@ -62,6 +69,7 @@ class PaymentController extends Controller
             'email' => $request->email,
             'event_type' => $request->event_type,
             'event_date' => $request->event_date,
+            'package_num' => $request->package_num,
             'modeOfPayment' => $request->modeOfPayment,
             'referenceNum' => $request->referenceNum,
         ])-> id;
@@ -73,7 +81,8 @@ class PaymentController extends Controller
         ]);
 
 
-        return view('frontend.home');
+
+        return redirect()->route('payment.receipt', $test);
     }
 
     /**
