@@ -15,14 +15,14 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('event_type');
-            $table->string('event_date');
-            $table->string('package_num');
-            $table->string('modeOfPayment')->nullable();
-            $table->string('referenceNum')->unique()->nullable();
+            $table->string('fullname', 64);
+            $table->string('phone', 32);
+            $table->string('email', 32);
+            $table->string('event_type', 64);
+            $table->string('event_date', 64);
+            $table->string('package_num', 32);
+            $table->string('modeOfPayment', 64)->nullable();
+            $table->string('referenceNum', 64)->unique()->nullable();
             $table->timestamps();
         });
     }

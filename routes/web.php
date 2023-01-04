@@ -24,11 +24,6 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/payment-receipt', function() {
-    return view('frontend.payment-receipt');
-});
-
-
 // Frontend
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontend.home');

@@ -15,9 +15,9 @@ class CreateFeaturedClientsTable extends Migration
     {
         Schema::create('featured_clients', function (Blueprint $table) {
             $table->id();
-            $table->string('client');
-            $table->string('message');
-            $table->string('image')->nullable();
+            $table->string('client', 64);
+            $table->mediumText('message');
+            $table->mediumText('image')->nullable();
             $table->timestamps();
         });
     }

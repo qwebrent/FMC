@@ -17,12 +17,12 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->unsignedBigInteger('reservation_id');
             $table->foreign('reservation_id')->references('id')->on('reservations')->onUpdate('cascade');
-            $table->string('pork');
-            $table->string('chicken');
-            $table->string('vegetable');
-            $table->string('beef');
-            $table->string('sea_food');
-            $table->string('desserts');
+            $table->string('pork', 64);
+            $table->string('chicken', 64);
+            $table->string('vegetable', 64);
+            $table->string('beef', 64);
+            $table->string('sea_food', 64);
+            $table->string('desserts', 64);
             $table->timestamps();
         });
     }
