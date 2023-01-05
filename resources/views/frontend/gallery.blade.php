@@ -48,41 +48,39 @@
         }
     </style>
     <!-- featured section -->
-    <div class="mt-5 mb-5">
-        <div class="container">
-            <div>
-                <h4>Foods</h4>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex align-items-center">
-                    <div class="gallery">
-                        @foreach ($foodgalleries as $foodgallery)
-                            <div class="gallery-item">
-                                <img src="/images/{{ $foodgallery->image }}" alt="{{ $foodgallery->title }}">
-                                <div class="caption">{{ $foodgallery->title }}</div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
+
+    <div class="container">
+        <div class="mt-6">
+            <h4 style="margin: 15px">Foods</h4>
         </div>
-        <div class="container">
-            <div class="">
-                <h4>Events</h4>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex align-items-center">
-                    <div class="gallery">
-                        @foreach ($eventgalleries as $eventgallery)
-                            <div class="gallery-item">
-                                <img src="/images/{{ $eventgallery->image }}" alt="{{ $eventgallery->title }}">
-                                <div class="caption">{{ $eventgallery->title }}</div>
-                            </div>
-                        @endforeach
-                    </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex align-items-center">
+                <div class="gallery">
+                    @foreach ($foodgalleries as $foodgallery)
+                        <div class="gallery-item">
+                            <img src="/images/{{ $foodgallery->image }}" alt="{{ $foodgallery->title }}">
+                            <div class="caption">{{ $foodgallery->title }}</div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-    <!-- end featured section -->
+    <div class="container mt-6">
+        <div>
+            <h4 style="margin: 15px">Events</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex align-items-center">
+                <div class="gallery">
+                    @foreach ($eventgalleries as $eventgallery)
+                        <div class="gallery-item">
+                            <img src="/images/{{ $eventgallery->image }}" alt="{{ $eventgallery->title }}">
+                            <div class="caption">{{ $eventgallery->title }}</div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

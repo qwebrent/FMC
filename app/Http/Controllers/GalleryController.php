@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -25,7 +26,8 @@ class GalleryController extends Controller
         // $galleries = Gallery::get();
         $foodgalleries = Gallery::where('type', '=', 'food')->get();
         $eventgalleries = Gallery::where('type', '=', 'event')->get();
-        return view('frontend.gallery', compact('foodgalleries', 'eventgalleries'));
+        $events = Event::all();
+        return view('frontend.gallery', compact('foodgalleries', 'eventgalleries', 'events'));
     }
     /**
      * Show the form for creating a new resource.

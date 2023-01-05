@@ -12,6 +12,7 @@ use App\Http\Controllers\FeaturedClientController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CalendarController;
 use App\Mail\PaymentMail;
+use App\Models\Event;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 /*
@@ -29,7 +30,8 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontend.home');
 Route::get('/aboutus', function () {
-    return view('frontend.about');
+    $events = Event::all();
+    return view('frontend.about', compact('events'));
 });
 Route::get('/agreements', function () {
     return view('frontend.agreement');
@@ -37,7 +39,8 @@ Route::get('/agreements', function () {
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'gallery'])->name('frontend.gallery');
 Route::get('/contactus', [App\Http\Controllers\ContactController::class, 'contactUs'])->name('frontend.contact');
 Route::get('/services', function () {
-    return view('frontend.services');
+    $events = Event::all();
+    return view('frontend.services', compact('events'));
 });
 
 // Packages Route

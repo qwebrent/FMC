@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -21,7 +22,8 @@ class ContactController extends Controller
     public function contactUs()
     {
         $contactus = Contact::first();
-        return view('frontend.contact', compact('contactus'));
+        $events = Event::all();
+        return view('frontend.contact', compact('contactus', 'events'));
     }
     /**
      * Show the form for creating a new resource.
