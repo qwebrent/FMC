@@ -12,7 +12,7 @@
                     <!-- logo -->
                     <div class="site-logo">
                         <a href="/">
-                            <img src="assets/img/fmclogo.png" alt="">
+                            <img src="assets/img/logofmc.png" alt="">
                         </a>
                     </div>
                     <!-- logo -->
