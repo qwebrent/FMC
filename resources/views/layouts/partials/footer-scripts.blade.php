@@ -18,6 +18,28 @@
 <script src="assets/js/sticker.js"></script>
 <!-- main js -->
 <script src="assets/js/main.js"></script>
+<!-- calendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            events: [
+                @foreach ($events as $event)
+                    {
+                        title: '{{ $event->title }}',
+                        start: '{{ $event->start }}{{ $event->time != null ? 'T' . $event->time : null }}',
+                        end: '{{ $event->end }}',
+                        url: '',
+                        color: '{{ $event->color != null ? $event->color : '#2e45e0' }}',
+                    },
+                @endforeach
+            ]
+        });
+    });
+</script>
 
 <script>
     $('input[type="checkbox"]').on('change', function(e) {

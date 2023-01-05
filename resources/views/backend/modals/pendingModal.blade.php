@@ -86,7 +86,7 @@
                     <div class="modal-footer">
                         <button class="btn btn-success" type="submit">Approve</button>
                 </form>
-                <form method="POST" action="{{ route('refuse.reservation', $reservations->id) }}">
+                <form method="POST" action="{{ route('refuse.reservation', $reservation->id) }}">
                     @csrf
                     @method('DELETE')
                     <input name="_method" type="hidden" value="DELETE">

@@ -894,7 +894,7 @@ a.mobile-show {
 .footer-area {
     background-color: #051922;
     color: #fff;
-    padding: 150px 0;
+    padding: 40px 0;
 }
 
 h2.widget-title {
@@ -2792,4 +2792,76 @@ table.order-details tbody td {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
+}
+
+
+/* Carousel */
+
+.marquee-full-width {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+.marquee-box {
+	overflow-x: hidden !important;
+	display: flex !important;
+	flex-direction: row !important;
+	position: relative;
+	width: 100%;
+}
+.marquee {
+	flex: 0 0 auto;
+	min-width: 100%;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	animation: marqueescroll 100s linear 0s infinite;
+	animation-play-state: running;
+	animation-delay: 0s;
+	animation-direction: normal;
+}
+.marquee figure
+{
+	margin-right: 3rem;
+	margin-left: 3rem;
+	padding: 5px;
+	max-width: 250px;
+	text-align: center;
+	vertical-align: top;
+}
+.marquee figcaption
+{
+	display:none;
+	font-weight: 80%;
+	color: #333;
+	line-height: 1.2;
+}
+.marquee img
+{
+	margin: 0 auto;
+	height: 200px;
+	max-height: 320px;
+	max-width: 100%;
+	background: #fdfdfd;
+	border: none;
+    object-fit: cover;
+
+}
+.marquee-box:hover div {
+	animation-play-state: running;
+}
+.marquee-box:active div {
+	animation-play-state: running;
+}
+@keyframes marqueescroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
 }

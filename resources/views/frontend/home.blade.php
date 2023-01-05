@@ -63,6 +63,58 @@
     </div>
     <!-- end product section -->
 
+    <!-- carousel section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="marquee-full-width">
+                    <div class="marquee-box">
+                        <div class="marquee">
+                            <figure>
+                                <img src="assets/img/fmcimages/1.jpg" alt="featured creator">
+                                <figcaption>Sanjeev kapoor Academy</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/2.png" alt="featured creator">
+                                <figcaption>Tuition Fe by BSE</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/3.png" alt="featured creator">
+                                <figcaption>Symboisis Centre For Entrepreneurship & Innovation</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/4.png" alt="featured creator">
+                                <figcaption>Srimantha</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/5.jpg" alt="featured creator">
+                                <figcaption>Gurukul by 100X VC</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/6.jpg" alt="featured creator">
+                                <figcaption>Shikshamaitri</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/7.jpg" alt="featured creator">
+                                <figcaption>Edifypath</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/8.jpg" alt="featured creator">
+                                <figcaption>Indian Energy Skill Development by UPES</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="assets/img/fmcimages/9.jpg" alt="featured creator">
+                                <figcaption>Meghnad Desai Academy Of Economics</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end carousel section -->
+
 
     <!-- testimonail-section -->
     <div class="testimonail-section mt-150 mb-150">
@@ -153,7 +205,22 @@
         </div>
     </div>
 
+    <section class="container-fluid margin-top">
+        <div class="container-sm">
+            <h1 class="ann p-5">Calendar Event</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-11" style="background-color: white; border-radius:5px;">
 
+                    <div class="card-style calendar-card">
+                        <div id="calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-standard mb-5">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End Col -->
+            </div>
+        </div>
+    </section>
     <!-- end advertisement section -->
 
     <!-- shop banner -->

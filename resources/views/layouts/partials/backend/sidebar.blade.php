@@ -84,11 +84,11 @@
                 Manage Website
             </div>
 
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('events.index') }}">
                     <i class="fas fa-fw fa-calendar"></i>
                     <span>Calendar</span></a>
-            </li> --}}
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('backend.gallery') }}">
                     <i class="fas fa-fw fa-image"></i>

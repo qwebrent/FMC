@@ -28,3 +28,8 @@
 <link rel="stylesheet" href="assets/css/main.css">
 <!-- responsive -->
 <link rel="stylesheet" href="assets/css/responsive.css">
+<!-- calendar -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
+
+<link rel="stylesheet" href="{{ URL::asset('assets/fullcalendar/main.css') }}">
+<script src="{{ URL::asset('assets/fullcalendar/main.js') }}"></script>

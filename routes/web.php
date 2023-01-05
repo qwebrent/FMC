@@ -10,6 +10,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\FeaturedClientController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\CalendarController;
 use App\Mail\PaymentMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -132,3 +133,10 @@ Route::get('reservation/restore/{id}', [App\Http\Controllers\ReservationControll
 Route::get('refused-reservation', [App\Http\Controllers\ReservationController::class, 'showRefused'])->name('reservation.refused');
 
 });
+
+// Calendar
+
+Route::get('/events', [CalendarController::class, 'index'])->name('events.index');
+Route::post('/events/add', [CalendarController::class, 'store'])->name('events.store');
+Route::put('/events/edit/{id}', [CalendarController::class, 'update'])->name('events.update');
+Route::delete('/events/delete/{id}', [CalendarController::class, 'destroy'])->name('events.delete');
