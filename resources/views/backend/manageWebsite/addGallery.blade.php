@@ -16,6 +16,17 @@
                         <input type="text" class="form-control col-md-6" id="title" name="title" required>
                     </div>
                     <div class="form-group">
+                        <label for="type" class="text-white">Image Type</label>
+                        <select class="form-control col-md-6" id="type" name="type">
+                            <option value="" disabled selected hidden class="text-muted">Select
+                                Item
+                            </option>
+                            <option value="food">Food</option>
+                            <option value="event">Event</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" class="form-control-file col-md-6" id="image" name="image" required>
                     </div>

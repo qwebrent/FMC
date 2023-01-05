@@ -22,6 +22,7 @@
                             height="200" width="200" style="object-fit: contain;">
                         <div class="card-body">
                             <h5 class="card-title">{{ $gallery->title }}</h5>
+                            <p class="card-text">{{ Str::title($gallery->type) }}</p>
                             <a href="{{ route('backend.gallery.show', $gallery->id) }}" class="btn btn-primary">View</a>
                             <a href="{{ route('backend.edit.gallery', $gallery->id) }}" class="btn btn-secondary">Edit</a>
                             <form action="{{ route('backend.delete.gallery', $gallery->id) }}" method="POST"

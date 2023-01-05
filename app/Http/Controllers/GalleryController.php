@@ -15,13 +15,17 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::get();
+        // $foodgalleries = Gallery::where('type', '=', food)->get();
+        // $eventgalleries = Gallery::where('type', '=', event)->get();
         return view('backend.manageWebsite.gallery', compact('galleries'));
     }
 
     public function gallery()
     {
-        $galleries = Gallery::get();
-        return view('frontend.gallery', compact('galleries'));
+        // $galleries = Gallery::get();
+        $foodgalleries = Gallery::where('type', '=', 'food')->get();
+        $eventgalleries = Gallery::where('type', '=', 'event')->get();
+        return view('frontend.gallery', compact('foodgalleries', 'eventgalleries'));
     }
     /**
      * Show the form for creating a new resource.
@@ -43,6 +47,7 @@ class GalleryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'type' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
@@ -51,9 +56,10 @@ class GalleryController extends Controller
 
         $gallery = new Gallery([
             'title' => $request->get('title'),
+            'type' => $request->get('type'),
             'image' => $imageName
         ]);
-        // dd($gallery):
+        // dd($gallery);
         $gallery->save();
         return redirect()->route('backend.gallery')->with('success', 'Image saved!');
     }
