@@ -135,8 +135,9 @@ Route::get('refused-reservation', [App\Http\Controllers\ReservationController::c
 });
 
 // Calendar
-
+Route::middleware(['auth'])->group(function () {
 Route::get('/events', [CalendarController::class, 'index'])->name('events.index');
 Route::post('/events/add', [CalendarController::class, 'store'])->name('events.store');
 Route::put('/events/edit/{id}', [CalendarController::class, 'update'])->name('events.update');
 Route::delete('/events/delete/{id}', [CalendarController::class, 'destroy'])->name('events.delete');
+});
