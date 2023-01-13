@@ -120,13 +120,11 @@ Route::patch('update-gallery/{id}', [App\Http\Controllers\GalleryController::cla
 Route::delete('delete-gallery/{id}', [App\Http\Controllers\GalleryController::class, 'destroy'])->name('backend.delete.gallery');
 
 });
-
+Route::post('store-fmc-messages',  [App\Http\Controllers\MessageController::class, 'store'])->name('backend.message.store');
 Route::middleware(['auth'])->group(function () {
 // Messages
 Route::get('fmc-messages', [App\Http\Controllers\MessageController::class, 'index'])->name('backend.message');
-Route::post('store-fmc-messages',  [App\Http\Controllers\MessageController::class, 'store'])->name('backend.message.store');
 Route::delete('delete-messages/{id}', [App\Http\Controllers\MessageController::class, 'destroy'])->name('backend.delete.message');
-
 });
 
 Route::middleware(['auth'])->group(function () {

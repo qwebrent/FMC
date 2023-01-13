@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class ReservationController extends Controller
 {
@@ -50,7 +51,8 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('frontend.service-packages.reservationform');
+        $events = Event::all();
+        return view('frontend.service-packages.reservationform', compact('events'));
     }
 
     /**
@@ -75,7 +77,9 @@ class ReservationController extends Controller
             'message'=>$request->message,
         ]);
 
-        return view('frontend.prompt');
+
+        $events = Event::all();
+        return view('frontend.prompt', compact('events'));
     }
 
     /**

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
+use App\Models\Contact;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -57,8 +59,10 @@ class MessageController extends Controller
 
      $message->save();
 
+     $contactus = Contact::first();
+     $events = Event::all();
       // Redirect the user back to the frontend with a success message
-      return redirect('/contactus')->with('success', 'Your message has been received!');
+      return redirect()->route('frontend.contact', compact('contactus', 'events'))->with('success', 'Your message has been received!');
     }
 
     /**

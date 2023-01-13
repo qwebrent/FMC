@@ -39,7 +39,7 @@ class FeaturedClientController extends Controller
         $request->validate([
             'client' => 'required',
             'message' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $imageName = time().'.'.$request->image->extension();
@@ -50,6 +50,7 @@ class FeaturedClientController extends Controller
             'message' => $request->get('message'),
             'image' => $imageName
         ]);
+
 
         $featuredclient->save();
         return redirect()->route('backend.featured')->with('success', 'Featured Client saved!');

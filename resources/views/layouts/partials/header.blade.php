@@ -20,9 +20,9 @@
                     <!-- menu start -->
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="/">Home</a>
+                            <li><a href="/" onclick="setActive(event, 'home')">Home</a>
                             </li>
-                            <li><a href="/aboutus">About</a></li>
+                            <li><a href="/aboutus" onclick="setActive(event, 'about')">About</a></li>
                             {{-- <li><a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="404.html">404 page</a></li>
@@ -34,14 +34,16 @@
                                     <li><a href="shop.html">Shop</a></li>
                                 </ul>
                             </li> --}}
-                            <li><a href="{{ route('frontend.gallery') }}">Gallery</a>
+                            <li onclick="setActive(event, 'gallery')"><a
+                                    href="{{ route('frontend.gallery') }}">Gallery</a>
                                 {{-- <ul class="sub-menu">
                                     <li><a href="news.html">News</a></li>
                                     <li><a href="single-news.html">Single News</a></li>
                                 </ul> --}}
                             </li>
-                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                            <li><a href="#">Services</a>
+                            <li onclick="setActive(event, 'contact')"><a
+                                    href="{{ route('frontend.contact') }}">Contact</a></li>
+                            <li onclick="setActive(event, 'services')"><a href="#">Services</a>
                                 <ul class="sub-menu">
                                     <li><a href="/services">Wedding and Debut</a></li>
                                 </ul>
@@ -61,4 +63,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    function setActive(event, link) {
+        // Remove the active class from all links
+        var navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(function(elem) {
+            elem.classList.remove('current-list-item');
+        });
+
+        // Add the active class to the clicked link
+        event.target.classList.add('current-list-item');
+    }
+</script>
 <!-- end header -->

@@ -28,6 +28,7 @@ class PaymentController extends Controller
     public function paymentForm($id)
     {
         $reservation = Reservation::where('id', $id)->firstOrFail();
+        $events = Event::all();
         return view('frontend.paymentConfirmation', compact('reservation'));
     }
 
@@ -42,7 +43,8 @@ class PaymentController extends Controller
     public function paymentReceipt($id)
     {
         $details = Payment::where('id', $id)->firstOrFail();
-        return view('frontend.payment-receipt', compact('details'));
+        $events = Event::all();
+        return view('frontend.payment-receipt', compact('details', 'events'));
     }
 
     /**

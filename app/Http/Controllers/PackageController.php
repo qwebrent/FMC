@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Price;
+use App\Models\Event;
 
 class PackageController extends Controller
 {
     public function packageOne(){
 
         $price1 = Price::where('id', 1)->first();
-        return view('frontend.service-packages.package1', compact('price1'));
+        $events = Event::all();
+        return view('frontend.service-packages.package1', compact('price1', 'events'));
     }
 
     public function packageTwo(){
@@ -44,6 +46,7 @@ class PackageController extends Controller
     }
 
     public function packageEight(){
+
         return view('frontend.service-packages.package8');
     }
 
