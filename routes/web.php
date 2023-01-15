@@ -69,7 +69,7 @@ Route::post('menu-create', [App\Http\Controllers\MenuController::class, 'store']
 
 Route::get('/email/{id}', [App\Http\Controllers\EmailController::class, 'email'])->name('payment.email');
 Auth::routes();
-Route::get('/home-666d636361746572696e67', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home666d636361746572696e67', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
 // Reservation Status
