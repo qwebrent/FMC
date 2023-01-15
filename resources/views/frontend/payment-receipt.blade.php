@@ -236,6 +236,9 @@
                                     <span class="m-r-10"><i class="fa fa-fw fa-lg fa-envelope"></i>
                                         fmccateringservices@gmail.com</span>
                                 </p>
+                                <div class="text-center">
+                                    <a href="{{ url('/') }}" class="btn btn-primary btn-lg">Home</a>
+                                </div>
                             </div>
                             <!-- end invoice-footer -->
                         </div>

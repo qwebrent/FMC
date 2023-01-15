@@ -11,6 +11,7 @@ use App\Http\Controllers\PriceController;
 use App\Http\Controllers\FeaturedClientController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\BotManController;
 use App\Mail\PaymentMail;
 use App\Models\Event;
 use Illuminate\Support\Facades\Mail;
@@ -68,7 +69,7 @@ Route::post('menu-create', [App\Http\Controllers\MenuController::class, 'store']
 
 Route::get('/email/{id}', [App\Http\Controllers\EmailController::class, 'email'])->name('payment.email');
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home-666d636361746572696e67', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
 // Reservation Status
@@ -142,3 +143,6 @@ Route::post('/events/add', [CalendarController::class, 'store'])->name('events.s
 Route::put('/events/edit/{id}', [CalendarController::class, 'update'])->name('events.update');
 Route::delete('/events/delete/{id}', [CalendarController::class, 'destroy'])->name('events.delete');
 });
+
+
+Route::match(['get', 'post'],'/botman', [BotManController::class,'handle']);
