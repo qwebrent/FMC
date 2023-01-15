@@ -78,10 +78,6 @@ class PaymentController extends Controller
         ])-> id;
 
 
-        $reservation = Reservation::where('id', '=', $test)->first()->update([
-            'isOngoing' => 1,
-            'isPaymentPending' => 2
-        ]);
 
 
 

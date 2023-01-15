@@ -145,6 +145,16 @@ class ReservationController extends Controller
     //     ]);
     // }
 
+    public function moveToOngoing($id)
+    {
+        $reservation = Reservation::where('id', '=', $id)->first()->update([
+            'isOngoing' => 1,
+            'isPaymentPending' => 2
+        ]);
+
+        return redirect()->route('home')->with('success', 'Reservation is now ongoing. Check the reservation under the ongoing tab.');
+    }
+
 
     /**
      * Remove the specified resource from storage.

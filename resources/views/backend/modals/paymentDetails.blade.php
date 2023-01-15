@@ -12,7 +12,9 @@
             <div class="modal-body">
                 <h4 class="modal-title text-dark font-weight-bold"">{{ $payment->fullname }} -
                     {{ $payment->event_type }}</h4>
-                <form>
+                <form action="{{ route('ongoing.reservation', $payment->id) }}" method="post">
+                    @csrf
+                    @method('put')
 
                     <br>
                     <br>
@@ -57,7 +59,7 @@
                     </table>
 
                     <div class="modal-footer">
-                        {{-- <button class="btn btn-success" type="submit">Send Receipt</button> --}}
+                        <button class="btn btn-primary" type="submit">Mark as Ongoing</button>
                         <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
                             rel="noopener noreferrer" class="btn btn-success">Compose
                             Email</a>

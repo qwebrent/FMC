@@ -94,8 +94,10 @@ Route::get('payment-receipt{id}', [App\Http\Controllers\PaymentController::class
 Route::middleware(['auth'])->group(function () {
 // Backend
 Route::PUT('/pending/{id}', [App\Http\Controllers\ReservationController::class, 'confirmReservation'])->name('confirm.reservation');
+Route::PUT('/ongoing/{id}', [App\Http\Controllers\ReservationController::class, 'moveToOngoing'])->name('ongoing.reservation');
 Route::PUT('/finished/{id}', [App\Http\Controllers\ReservationController::class, 'moveToFinished'])->name('finish.reservation');
 Route::PUT('/confirmed/{id}', [App\Http\Controllers\ReservationController::class, 'moveToPendingPayment'])->name('pending.payment');
+
 
 });
 
