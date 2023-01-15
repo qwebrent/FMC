@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Event;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('frontend.service-packages.package8');
+        $events = Event::all();
+        return view('frontend.service-packages.package8', compact('events'));
     }
 
     /**
@@ -60,7 +62,9 @@ class MenuController extends Controller
             'desserts'=>$request->desserts,
         ]);
 
-        return view('frontend.prompt');
+        $events = Event::all();
+
+        return view('frontend.prompt', compact('events'));
     }
 
     /**

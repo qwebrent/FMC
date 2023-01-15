@@ -111,7 +111,8 @@
                                     <div class="text-center">
                                         <p><a href="/agreements" class="col-md-12 text-white">FMC Agreement</a></p>
                                     </div>
-                                    <div class="form-check col-md-12 text-center">
+                                    <div class="form-check col-md-12 text-center" data-toggle="modal"
+                                        data-target="#myModal">
                                         <input type="checkbox" required class="form-check-input" id="exampleCheck1">
                                         <label class="form-check-label text-white" for="exampleCheck1">I agree to the
                                             Terms and Conditions of FMC Catering and Services</label>

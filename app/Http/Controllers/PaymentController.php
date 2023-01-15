@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Event;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class PaymentController extends Controller
     {
         $reservation = Reservation::where('id', $id)->firstOrFail();
         $events = Event::all();
-        return view('frontend.paymentConfirmation', compact('reservation'));
+        return view('frontend.paymentConfirmation', compact('reservation', 'events'));
     }
 
 
@@ -96,7 +97,8 @@ class PaymentController extends Controller
     public function pendingPayment($id)
     {
         $reservations = Reservation::where('id', $id)->firstOrFail();
-        return view('frontend.confirmation', compact('reservations'));
+        $events = Event::all();
+        return view('frontend.confirmation', compact('reservations', 'events'));
     }
 
     public function toOngoingTable($id)
